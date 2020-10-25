@@ -7,8 +7,8 @@ Variables
 
 @font-face {
     font-family: 'BLOKKNeue-Regular';
-    src: url('../fonts/BLOKKNeue-Regular.woff') format('woff'),
-    url('../fonts/BLOKKNeue-Regular.svg#BLOKKNeue-Regular') format('svg');
+    src: url('fonts/BLOKKNeue-Regular.woff') format('woff'),
+    url('fonts/BLOKKNeue-Regular.svg#BLOKKNeue-Regular') format('svg');
  }
 
 
