@@ -7,10 +7,9 @@ Variables
 
 @font-face {
     font-family: 'BLOKKNeue-Regular';
-    src: url('https://github.com/los-gordos/BLOKK/blob/master/BLOKKNeue-Regular.ttf') format('woff'),
-    url('https://github.com/components/blokkfont/blob/master/BLOKKNeue-Regular/BLOKKNeue-Regular.svg#BLOKKNeue-Regular') format('svg');
+    src: url('../fonts/BLOKKNeue-Regular.woff') format('woff'),
+    url('../fonts/BLOKKNeue-Regular.svg#BLOKKNeue-Regular') format('svg');
  }
-
 
 
 :root {
