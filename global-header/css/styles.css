@@ -12,6 +12,7 @@ Variables
  }
 
 
+
 :root {
   --base-unit: 8px;
   --monoGreyLight: rgba(237,240,242,1);
@@ -254,6 +255,10 @@ Navigation
   text-decoration: none;
 }
 
+[data-hover-animation-opacity="on"] .navigationLink_top{
+  transition: opacity .3s;
+}
+
 .dropdown_icon,
 .see-all-icon{
   display: inline-block;
@@ -273,9 +278,10 @@ Navigation
   border-radius: var(--borderRadius);
   background-color: var(--monoGreyLight);
   opacity: 0; 
+  transition: opacity .3s;
 }
 
-body:not([data-hover-animation="on"]) .navigationItem_top:hover .navigationLink_background{
+body:not([data-hover-animation-translate="on"]) .navigationItem_top:hover .navigationLink_background{
   opacity: 1; 
 }
 
@@ -283,7 +289,7 @@ body:not([data-hover-animation="on"]) .navigationItem_top:hover .navigationLink_
   font-weight: 700;
 }
 
-body:not([data-hover-animation="on"]) .active .navigationLink_background{
+body:not([data-hover-animation-translate="on"]) .active .navigationLink_background{
   opacity: 1; 
 }
 
@@ -291,7 +297,7 @@ body:not([data-hover-animation="on"]) .active .navigationLink_background{
   position: absolute;
 }
 
-[data-hover-animation="on"] #navigationLink_background_hover{
+[data-hover-animation-translate="on"] #navigationLink_background_hover{
   position: absolute; 
   top: 0; 
   left: 0; 
@@ -377,6 +383,16 @@ Dropdown
   transform: translateY(0px);
   opacity: 1;
   transition: all .3s 0s;
+}
+
+
+[data-hover-animation-opacity="on"] #navigation:hover .navigationLink_top{
+  opacity: 0.45;
+}
+
+[data-hover-animation-opacity="on"] .navigationLink_top:hover,
+[data-hover-animation-opacity="on"] .navigationItem_top:hover .navigationLink_top{
+  opacity: 1!important;
 }
 
 
