@@ -1,5 +1,6 @@
 (function($, root, undefined) {
 
+
 /* Top nav active state */
 $(".navigationItem_top").click(function () {
     var text = $(this).find(".navigationLink_top").text();
@@ -45,7 +46,7 @@ $.animatedHover = function() {
 	  .data("origLeft", $(".active a").position().left)
 	  .data("origWidth", $magicHover.width());
 
-	$("[data-hover-animation='on'] .navigationItem_top").hover(
+	$("[data-hover-animation-translate='on'] .navigationItem_top").hover(
 	  function() {
 	    $el = $(this).find(".navigationLink_top");
 	    $dropdownSize = $(this).find('.dropdown');
@@ -125,9 +126,15 @@ $("#thumbnail-height").change(function(){
   $('body').attr('data-thumbnail-height', selectedThumbnailheight);
 });
 
-$("#hover-animation").change(function(){
+$("#hover-animation-translate").change(function(){
   var selectedHoverAnimation = $(this).children("option:selected").val();
-  $('body').attr('data-hover-animation', selectedHoverAnimation);
+  $('body').attr('data-hover-animation-translate', selectedHoverAnimation);
+  $.animatedHover();
+});
+
+$("#hover-animation-opacity").change(function(){
+  var selectedHoverAnimation = $(this).children("option:selected").val();
+  $('body').attr('data-hover-animation-opacity', selectedHoverAnimation);
   $.animatedHover();
 });
 
