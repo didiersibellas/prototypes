@@ -453,7 +453,7 @@ button{
 
 .search{
   height: 40px;
-  background-color: var(--monoBlackA500);
+  background-color: var(--hoverColor);
   border-radius: var(--borderRadius);
   color: var(--monoBlack);
   border: 0;
