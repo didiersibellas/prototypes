@@ -302,12 +302,79 @@
 					</ul>
 				</nav>
 			</div>
+			
 
 			<div class="header_right">
-				<input class="search" spellcheck="false" type="text" placeholder="Search Canva" value="">
-				<div class="helpcenter_icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-1.5a8.5 8.5 0 1 0 0-17 8.5 8.5 0 0 0 0 17zM8.75 9.85c.05-1.62 1.17-2.8 3.2-2.8 1.87 0 3.12 1.08 3.12 2.6 0 1.04-.52 1.77-1.45 2.33-.9.52-1.15.87-1.15 1.55v.39H10.9l-.01-.47c-.06-1.02.33-1.64 1.28-2.2.84-.5 1.13-.87 1.13-1.54 0-.71-.57-1.23-1.43-1.23-.89 0-1.45.54-1.5 1.37H8.74zm3 7.33c-.68 0-1.13-.43-1.13-1.09 0-.66.45-1.1 1.13-1.1.7 0 1.14.44 1.14 1.1 0 .66-.44 1.09-1.14 1.09z"></path></svg></div>
-				<button class="button_primary">Sign in</button>
+
+				<div class="header_right_left">
+					<div class="search_container">
+						<input class="search" spellcheck="false" type="text" placeholder="Try &quot;Logo&quot;" value="">
+						<div class="search_results">
+							<ul class="listItem">
+								<li><a href="#">Poster</a></li>
+								<li><a href="#">Logo</a></li>
+								<li><a href="#">Presentation</a></li>
+								<li><a href="#">Flyer</a></li>
+								<li><a href="#">Infographic</a></li>
+								<li><a href="#">Brochure</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="header_right_right">
+					<div class="header-logged-out">
+						<button class="button_secondary">Login</button>
+						<button class="button_primary">Signup</button>
+					</div>
+					<div class="header-logged-in">
+						<div class="header_icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path class="c6Aheg" d="M13.5 19H15a3 3 0 0 1-6 0h1.5a1.5 1.5 0 0 0 3 0z"></path><path class="bokjLg" fill="currentColor" fill-rule="evenodd" d="M20.04 17.5h.21a.75.75 0 1 1 0 1.5H3.75a.75.75 0 1 1 0-1.5h.21c1-1.15 1.82-2.7 1.82-5.97v-1.3a6.22 6.22 0 0 1 4.87-6.08 1.5 1.5 0 1 1 2.7 0 6.22 6.22 0 0 1 4.87 6.07v1.3c0 3.27.83 4.82 1.82 5.98zm-1.87 0c-.99-1.52-1.45-3.3-1.45-5.97v-1.3a4.72 4.72 0 0 0-9.44 0v1.3c0 2.67-.46 4.45-1.45 5.97h12.34z"></path></svg></div>
+						<button class="button_primary">Create a design</button>
+						<button class="avatar">
+							<div class="avatar-img"><img src="https://randomuser.me/api/portraits/women/95.jpg"></div>
+							<span class="dropdown_icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" d="M11.71 6.47l-3.53 3.54c-.1.1-.26.1-.36 0L4.3 6.47a.75.75 0 1 0-1.06 1.06l3.53 3.54c.69.68 1.8.68 2.48 0l3.53-3.54a.75.75 0 0 0-1.06-1.06z"></path></svg></span>
+						</button>
+					</div>
+					<div class="profile_flyout">
+						<div class="profile_header">
+							<div class="profile-img"><img src="https://randomuser.me/api/portraits/women/95.jpg"></div>
+							<div class="profile-info">
+								<div class="profile-name">Miranda Smith</div>
+								<div class="profile-email">Miranda@gmail.com</div>
+							</div>
+						</div>
+						<div class="profile-section">
+							<ul class="listItem">
+								<li>
+									<a href="#">View profile</a>
+								</li>
+								<li>
+									<a href="#">Account settings</a>
+								</li>
+								<li>
+									<a href="#">Get help</a>
+								</li>
+							</ul>
+						</div>
+						<div class="profile-section">
+							<ul class="listItem">
+								<li>
+									<a href="#">Get the Canva Apps</a>
+								</li>
+								<li>
+									<a href="#">Refer friends</a>
+								</li>
+								<li>
+									<a href="#">Sign out</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
 			</div>
+
+
 		</header>
 		<section class="content">
 			<div class="banner">
@@ -324,6 +391,39 @@
 			</div>
 		</section>
 
+		<div class="styleControl">
+			<div class="reset"><a gref="#">Reset</a></div>
+			<div class="styleControl_column">
+				<label>Dropdown font size</label>
+				<select name="font-size" id="font-size">
+					<option value="14" selected>14px</option>
+					<option value="12">12px</option>
+				</select>
+			</div>
+			<div class="styleControl_column">
+				<label>Dropdown spacing</label>
+				<select name="spacing" id="spacing">
+					<option value="16" selected >16px</option>
+					<option value="24">24px</option>
+				</select>
+			</div>
+			<div class="styleControl_column">
+				<label>User status</label>
+				<select name="user-status" id="user-status">
+					<option value="logged-out" selected >Logged out</option>
+					<option value="logged-in">Logged in</option>
+				</select>
+			</div>
+			<div class="styleControl_column">
+				<label>Search</label>
+				<select name="search-width" id="search-width">
+					<option value="search-full-width" selected >Full width</option>
+					<option value="search-set-width" >Set width</option>
+				</select>
+			</div>
+		</div>
+
+		<!--
 		<div class="styleControl">
 			<h2>Adjust your style</h2>
 			<div class="reset"><a gref="#">Reset</a></div>
@@ -375,8 +475,21 @@
 					<option value="on" >On</option>
 				</select>
 			</div>
+			<div class="styleControl_column">
+				<h3>User Status</h3>
+				<label>LoggedIn / LoggedOut</label>
+				<select name="user-status" id="user-status">
+					<option value="logged-out" selected >Logged out</option>
+					<option value="logged-in" >Logged in</option>
+				</select>
+				<label>Search width</label>
+				<select name="search-width" id="search-width">
+					<option value="search-full-width" selected >Full width</option>
+					<option value="search-set-width" >Set width</option>
+				</select>
+			</div>
 		</div>
-
+		-->
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="js/scripts.js"></script>
