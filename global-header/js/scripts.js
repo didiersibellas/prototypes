@@ -29,6 +29,44 @@ $(".reset a").click(function () {
    $('select').prop('selectedIndex',0);
 });
 
+// Profile dropdown
+
+$('.search_container').click( function(event) {
+    $('.search_container').addClass('active');
+});
+
+$(document).click( function(event){
+    if ( !$(event.target).closest('.search_container').length ) {
+	    $('.search_container').removeClass('active');
+    }
+});
+
+
+
+// Profile dropdown
+
+var openProfile = function(){
+    $('.avatar').addClass('active');
+    $('.profile_flyout').addClass('active');
+}
+var closeProfile = function(){
+    $('.avatar').removeClass('active');
+    $('.profile_flyout').removeClass('active');
+}
+
+$('.avatar').click( function(event) {
+    event.stopPropagation();
+    $(this).is('.active') ? closeProfile() : openProfile();
+});
+
+$(document).click( function(event){
+    if ( !$(event.target).closest('.profile_flyout').length ) {
+        closeProfile();   
+    }
+});
+
+
+
 
 $.animatedHover = function() {
 	var animatedHoverRunning = true;
@@ -100,7 +138,52 @@ $.animatedDropdown = function() {
 
 	);
 
+	// Hover mouse direction
+
+	$('li.hasChildren').each(function() {
+
+	    $(this).on('mouseenter mouseleave', function(e) {
+	        var $this = $(this),
+	            width = $this.width(),
+	            height = $this.height();
+
+	        var x = (e.pageX - $this.offset().left - (width / 2)) * (width > height ? (height / width) : 1),
+	            y = (e.pageY - $this.offset().top - (height / 2)) * (height > width ? (width / height) : 1);
+
+	        // top = 0, right = 1, bottom = 2, left = 3
+	        var dir_num = Math.round((((Math.atan2(y, x) * (180 / Math.PI)) + 180) / 90) + 3) % 4,
+	            directions = ['top', 'right', 'bottom', 'left'];
+
+	        // If mouse enter
+	        if (e.type === 'mouseenter') {
+	            // Remove all hover out classes
+
+	            $("body").addClass("menuOpened");
+	            $this.removeClass(function(index, css) {
+	                return (css.match(/(^|\s)hover-out-\S+/g) || []).join(' ');
+	            });
+
+	            // Add in direction class
+	            $this.addClass('hover-in-' + directions[dir_num]);
+	        }
+
+
+	        // If mouse leave
+	        if (e.type === 'mouseleave') {
+	            // Remove all hover in classes
+	            $("body").removeClass("menuOpened");
+	            $this.removeClass(function(index, css) {
+	                return (css.match(/(^|\s)hover-in-\S+/g) || []).join(' ');
+	            });
+
+	            // Add out direction class
+	            $this.addClass('hover-out-' + directions[dir_num]);
+	        }
+	    });
+	  });
+
 };
+
 
 
 
@@ -143,6 +226,18 @@ $("#dropdown-animation").change(function(){
   $('body').attr('data-dropdown-animation', selectedDropdownAnimation);
   $.animatedDropdown();
 });
+
+$("#user-status").change(function(){
+  var selectedUserStatus = $(this).children("option:selected").val();
+  $('body').attr('data-user-status', selectedUserStatus);
+});
+
+$("#search-width").change(function(){
+  var selectedSearchWidth = $(this).children("option:selected").val();
+  $('body').attr('data-search-width', selectedSearchWidth);
+});
+
+
 
 
 
